@@ -1,0 +1,58 @@
+<!--extend base page inside home page-->
+
+{% extends 'base.html' %}
+
+{%block title%}Welcome to Django Block Project{%endblock%}
+
+{%block content%}
+
+<div class="container-custom">
+    <div class="owl-carousel" >
+ {%for cat in cats%}
+
+<div class="card item" style="margin-left:10px">
+    <div class="img-container center-align">
+        <img class="responsive-img" style="width:fit-content;height:110px"  src="/media/{{cat.image}}" alt="{{cat.title}} ">
+    </div>
+    <div class="card-content">
+        <div class="card-title">
+            {{cat.title}}
+        </div>
+        <p class="truncate">{{cat.description}}</p>
+         <div class="container mt20 center-align">
+        <a href="/category/{{cat.url}}" class="btn navcol">Show</a>
+    </div>
+    </div>
+
+</div>
+
+ {%endfor%}
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {%for p in posts%}
+            <div class="row">
+                <div class="col s12 m8">
+
+            {{p.content |truncatewords:60| safe}}
+
+             <div class="mt20">
+
+                <a href="/blog/{{p.url}}" class="btn navcol">Read More..</a>
+
+            </div>
+                </div>
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img " alt="img" style="margin-top:50px">
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}

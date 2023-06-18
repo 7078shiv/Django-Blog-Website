@@ -1,0 +1,30 @@
+.navcol{
+background:#477091!important;
+}
+
+.mt20{
+margin-top:20px
+}
+
+.container-custom{
+width:95%!important;
+margin:auto;
+}
+
+.item{
+margin-left:100px;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.hov:hover{
+color:yellow;
+}
