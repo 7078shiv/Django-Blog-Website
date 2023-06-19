@@ -5,6 +5,12 @@ from blogs.models import Post, Category
 
 
 # Create your views here.
+
+def about(request):
+    cats = Category.objects.all()
+    return render(request, 'about.html', {'cats': cats})
+
+
 def home(request):
     # load all the post from db(10)
     posts = Post.objects.all()[:11]
@@ -31,4 +37,3 @@ def category(request, url):
     cat = Category.objects.get(url=url)
     posts = Post.objects.filter(cat=cat)
     return render(request, 'category.html', {'cat': cat, 'posts': posts})
-

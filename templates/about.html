@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block title%}Welcome to Django Block Project{%endblock%}
+
+{%block content%}
+
+<h2>About</h2>
+<p>Welcome to My Blog! We are passionate about sharing interesting and engaging content with our readers.</p>
+<section>
+            <h2>Categories</h2>
+            <ul class="categories-list" style="margin-left:20px">
+                {%for c in cats%}
+                <li><a href="/category/{{c.url}}">{{c.title}}</a></li>
+                {%endfor%}
+            </ul>
+</section>
+{%endblock%}
